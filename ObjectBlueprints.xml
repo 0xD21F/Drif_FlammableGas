@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects>
+  <!-- Gas -->
+  <object Name="FlammableGas" Inherits="Gas">
+    <part Name="Render" DisplayName="flammable gas" />
+    <part Name="Description" Short="The darkened air shimmers with untapped potential. It cries out for warmth, and those who answer need only nudge." />
+    <part Name="Gas" GasType="FlammableGas" ColorString="&amp;K^m" />
+    <part Name="Drif_GasFlammable"/>
+    <tag Name="GasGenerationName" Value="Flammable Gas Generation" />
+    <tag Name="LevelEffectDescription" Value="Flammable gas density" />
+    <tag Name="ActivationColorString" Value="&amp;y" />
+    <tag Name="DynamicObjectsTable:AjiConch" />
+  </object>
+  
+  <!-- Grenades -->
+  <object Name="FlammableGasGrenade1" Inherits="Grenade">
+    <part Name="Render" DisplayName="{{c|{{fiery|flammable}} gas grenade mk I}}" />
+    <part Name="GasGrenade" Density="200" GasObject="FlammableGas" />
+    <part Name="Commerce" Value="20" />
+    <part Name="Description" Short="A dense sphere of rubberised metal." />
+    <tag Name="Mark" Value="1" />
+    <tag Name="TurretStockWeight" Value="2" />
+  </object>
+  <object Name="FlammableGasGrenade2" Inherits="Grenade">
+    <part Name="Render" DisplayName="{{c|{{fiery|flammable}} gas grenade mk II}}" />
+    <part Name="GasGrenade" Density="400" GasObject="FlammableGas" />
+    <part Name="Commerce" Value="20" />
+    <part Name="Description" Short="A dense sphere of rubberised metal." />
+    <tag Name="Mark" Value="2" />
+  </object>
+  <object Name="FlammableGasGrenade3" Inherits="Grenade">
+    <part Name="Render" DisplayName="{{c|{{fiery|flammable}} gas grenade mk III}}" />
+    <part Name="GasGrenade" Density="600" GasObject="FlammableGas" />
+    <part Name="Commerce" Value="20" />
+    <part Name="Description" Short="A dense sphere of rubberised metal." />
+    <part Name="TinkerItem" Bits="001" />
+    <tag Name="Mark" Value="3" />
+    <tag Name="ExcludeFromTurretStock" />
+  </object>
+
+  <!-- Misc -->
+  <object Name="Burning Gas" Inherits="InertObject">
+    <part Name="NoDamage" />
+    <part Name="Render" DisplayName="burning gas" RenderString="*" RenderLayer="-1" />
+    <part Name="Description" Short="The air burns bright, potential is unleashed." />
+    <part Name="Physics" Weight="0" />
+    <part Name="Drif_CombustingGasZone" Level="1" Duration="3" />
+    <part Name="LightSource" Lit="true" Radius="3" />
+    <tag Name="ExcludeFromDynamicEncounters" />
+    <tag Name="NoSparkingQuest" />
+  </object>
+
+</objects>

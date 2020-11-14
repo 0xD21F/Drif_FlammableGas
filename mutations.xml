@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mutations>
+  <category Name="Physical">
+    <mutation Name="Flammable Gas Generation" Cost="3" MaxSelected="1" Class="Drif_FlammableGasGeneration" BearerDescription="those who expel explosive gass" Code="fg"></mutation>
+ </category>
+</mutations>
