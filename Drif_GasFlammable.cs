@@ -39,9 +39,6 @@ namespace XRL.World.Parts
 
     public override bool FireEvent(Event E)
     {
-      Gas gasPart = this.ParentObject.GetPart("Gas") as Gas;
-      IComponent<GameObject>.AddPlayerMessage("Density: " + gasPart.Density);
-
       if (E.ID == "DensityChange" && this.StepValue(E.GetIntParameter("OldValue")) != this.StepValue(E.GetIntParameter("NewValue")))
         this.FlushNavigationCaches();
 
