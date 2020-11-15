@@ -27,6 +27,6 @@ namespace XRL.World.Parts.Mutation
 
     public override string GetReleaseAbilityName() => "Release Flammable Gas";
 
-    public override int GetGasDensityForLevel(int Level) => 200 * Level;
+    public override int GetGasDensityForLevel(int Level) => 200 + (200 * Level);
   }
 }
