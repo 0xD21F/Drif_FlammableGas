@@ -63,7 +63,7 @@ namespace XRL.World.Parts
       int phase = this.ParentObject.GetPhase();
 
       // for each 200 density, gain 1 level (minimum 1, maximum 20)
-      int densityLevel = Math.Min(gasPart.Density / 200 + 1, 20);
+      int burnDensityLevel = Math.Min(gasPart.Density / 200 + 1, 20);
 
       // If density is low, burn
       if(gasPart.Density <= this.ExplosionThreshold) {
@@ -73,7 +73,7 @@ namespace XRL.World.Parts
         // Replace gas with "Burning Gas"
         GameObject GO = GameObjectFactory.Factory.CreateObject("Burning Gas");
         Drif_CombustingGasZone combustingGasPart = GO.GetPart("Drif_CombustingGasZone") as Drif_CombustingGasZone;
-        combustingGasPart.Level = densityLevel;
+        combustingGasPart.Level = burnDensityLevel;
         combustingGasPart.Owner = gasPart.Creator;
         currentCell.AddObject(GO);
 
@@ -81,18 +81,20 @@ namespace XRL.World.Parts
       }
       // Otherwise explode
       else {
+        int explodeDensityLevel = Math.Min((gasPart.Density - this.ExplosionThreshold) / 200 + 1, 20);
+
         this.PlayWorldSound(this.GetPropertyOrTag("DetonatedSound", "grenade_heat"), 1f, combat: true);
         this.DidX("explode", terminalPunctuation: "!");
 
-        int explosiveForce = (int)((this.BaseForce * densityLevel) / 2);
+        int explosiveForce = (int)((this.BaseForce * explodeDensityLevel) / 2);
 
-        List<Cell> adjacentCells = currentCell.GetAdjacentCells((int)Math.Min(densityLevel, 6));
+        List<Cell> adjacentCells = currentCell.GetAdjacentCells((int)Math.Min(explodeDensityLevel, 6));
         foreach (Cell cell in adjacentCells) 
         {
-          cell.TemperatureChange(310 + 30 * densityLevel, gasPart.Creator, false, false, false, this.ParentObject.GetPhase());
+          cell.TemperatureChange(310 + 30 * explodeDensityLevel, gasPart.Creator, false, false, false, this.ParentObject.GetPhase());
         }
 
-        this.ParentObject.Explode(explosiveForce, gasPart.Creator, densityLevel + this.ExplosionDie);
+        this.ParentObject.Explode(explosiveForce, gasPart.Creator, explodeDensityLevel + this.ExplosionDie);
       }
     }
   }
