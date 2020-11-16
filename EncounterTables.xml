@@ -1,0 +1,38 @@
+<encountertables>
+  <!-- Grenades -->
+  <encountertable Name="Artifact 3C" Load="Merge">
+    <objects>
+      <object Chance="5" Number="1d1" Blueprint="FlammableGasGrenade1"></object>
+    </objects>
+  </encountertable>
+
+  <encountertable Name="Artifact 4C" Load="Merge">
+    <objects>
+      <object Chance="5" Number="1d1" Blueprint="FlammableGasGrenade2"></object>
+    </objects>
+  </encountertable>
+
+    <encountertable Name="Artifact 5C" Load="Merge">
+      <objects>
+        <object Chance="50" Number="1d1" Blueprint="FlammableGasGrenade2"></object>
+      </objects>
+    </encountertable>
+
+  <encountertable Name="Artifact 6C" Load="Merge">
+    <objects>
+      <object Chance="5" Number="1d1" Blueprint="FlammableGasGrenade3"></object>
+    </objects>
+  </encountertable>
+
+  <encountertable Name="Artifact 7C" Load="Merge">
+    <objects>
+      <object Chance="5" Number="1d1" Blueprint="FlammableGasGrenade3"></object>
+    </objects>
+  </encountertable>
+
+  <encountertable Name="Artifact 8C" Load="Merge">
+    <objects>
+      <object Chance="5" Number="1d1" Blueprint="FlammableGasGrenade3"></object>
+    </objects>
+  </encountertable>
+</encountertables>

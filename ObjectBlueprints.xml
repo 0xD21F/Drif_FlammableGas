@@ -18,6 +18,7 @@
     <part Name="GasGrenade" Density="200" GasObject="FlammableGas" />
     <part Name="Commerce" Value="20" />
     <part Name="Description" Short="A dense sphere of rubberised metal." />
+    <part Name="TinkerItem" Bits="001" />
     <tag Name="Mark" Value="1" />
     <tag Name="TurretStockWeight" Value="2" />
   </object>
@@ -26,6 +27,7 @@
     <part Name="GasGrenade" Density="400" GasObject="FlammableGas" />
     <part Name="Commerce" Value="20" />
     <part Name="Description" Short="A dense sphere of rubberised metal." />
+    <part Name="TinkerItem" Bits="011" />
     <tag Name="Mark" Value="2" />
   </object>
   <object Name="FlammableGasGrenade3" Inherits="Grenade">
@@ -33,7 +35,7 @@
     <part Name="GasGrenade" Density="600" GasObject="FlammableGas" />
     <part Name="Commerce" Value="20" />
     <part Name="Description" Short="A dense sphere of rubberised metal." />
-    <part Name="TinkerItem" Bits="001" />
+    <part Name="TinkerItem" Bits="012" />
     <tag Name="Mark" Value="3" />
     <tag Name="ExcludeFromTurretStock" />
   </object>
@@ -50,4 +52,8 @@
     <tag Name="NoSparkingQuest" />
   </object>
 
+  <!-- Population table initialiser -->
+  <object Name="FlammableGasInitialiser" Inherits="Widget">
+    <part Name="Drif_FlammableGasInitialiser" />
+  </object>
 </objects>
