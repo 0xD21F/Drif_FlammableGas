@@ -4,7 +4,7 @@ using XRL;
 using XRL.Core;
 
 /**
- * Population tables currently not modifiable via XML - this is a workaround to update the population tables in real-time.
+ * Population tables currently not modifiable via XML - this is a workaround to update the population tables at run-time.
  *
  * The [WantLoadBlueprint] tag and a corresponding object blueprint cause the LoadBlueprint method to run on mod load,
  * and from there we dynamically add our grenades to the Explosives lists. This will allow them to be sold by Grenadiers
