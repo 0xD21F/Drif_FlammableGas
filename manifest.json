@@ -1,0 +1,10 @@
+{
+	"id": "Drif_FlammableGas",
+	"loadorder": 1,
+	"title": "Flammable Gas",
+	"description": "Adds new gas type - Flammable gas.\n\nAdds the Generate Flammable Gas mutation and Flammable Gas grenades.\n\nFlammable gas will ignite after reaching a certain temperature, and increase temperature of nearby tiles in turn. If the gas density is high enough, it will instead explode.",
+	"tags": "mutation, gas, grenades",
+	"version": "1.0",
+	"author": "drif",
+	"previewImage": "preview.png"
+}
