@@ -91,7 +91,7 @@ namespace XRL.World.Parts
         List<Cell> adjacentCells = currentCell.GetAdjacentCells((int)Math.Min(explodeDensityLevel, 6));
         foreach (Cell cell in adjacentCells) 
         {
-          cell.TemperatureChange(310 + 30 * explodeDensityLevel, gasPart.Creator, false, false, false, this.ParentObject.GetPhase());
+          cell.TemperatureChange(310 + 30 * explodeDensityLevel, gasPart.Creator, false, false, false, false, this.ParentObject.GetPhase());
         }
 
         this.ParentObject.Explode(explosiveForce, gasPart.Creator, explodeDensityLevel + this.ExplosionDie);

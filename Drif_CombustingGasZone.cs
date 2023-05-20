@@ -109,12 +109,12 @@ namespace XRL.World.Parts
         GameObject.validate(ref this.Owner);
         if (this.Duration > 0)
         {
-          this.ParentObject.TemperatureChange((310 + 30 * this.Level) / 2, this.Owner, false, false, false, this.ParentObject.GetPhase());
+          this.ParentObject.TemperatureChange((310 + 30 * this.Level) / 2, this.Owner, false, false, false, false, this.ParentObject.GetPhase());
 
           List<Cell> adjacentCells = this.ParentObject.CurrentCell.GetAdjacentCells(true);
           foreach (Cell cell in adjacentCells) 
           {
-            cell.TemperatureChange((310 + 30 * this.Level) / 2, this.Owner, false, false, false, this.ParentObject.GetPhase());
+            cell.TemperatureChange((310 + 30 * this.Level) / 2, this.Owner, false, false, false, false, this.ParentObject.GetPhase());
           }
 
           ++this.Turn;
