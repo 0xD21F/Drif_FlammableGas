@@ -67,7 +67,7 @@ namespace XRL.World.Parts
 
       // If density is low, burn
       if(gasPart.Density <= this.ExplosionThreshold) {
-        this.DidX("combust", terminalPunctuation: "!");
+        this.DidX("combust", EndMark: "!");
         this.PlayWorldSound(this.GetPropertyOrTag("DetonatedSound", "grenade_heat"), 1f, combat: true);
 
         // Replace gas with "Burning Gas"
@@ -84,7 +84,7 @@ namespace XRL.World.Parts
         int explodeDensityLevel = Math.Min((gasPart.Density - this.ExplosionThreshold) / 200 + 1, 20);
 
         this.PlayWorldSound(this.GetPropertyOrTag("DetonatedSound", "grenade_heat"), 1f, combat: true);
-        this.DidX("explode", terminalPunctuation: "!");
+        this.DidX("explode", EndMark: "!");
 
         int explosiveForce = (int)((this.BaseForce * explodeDensityLevel) / 2);
 
